@@ -13,12 +13,12 @@ let myHeading = document.querySelector("h1");
 
 
 function setUserName() {
-  const myName = prompt("Please enter your name.");
+  let myName = prompt("Please enter your name.");
   if (!myName) {
     setUserName();
   } else {
     localStorage.setItem("name", myName);
-    myHeading.textContent = `Hi ${myName} let us create a ETH Wallet `;
+    myHeading.innerHTML = `Hi ${myName} let us create a ETH Wallet `;
   }
 }
 
@@ -26,8 +26,8 @@ function setUserName() {
 if (!localStorage.getItem("name")) {
   setUserName();
 } else {
-  const storedName = localStorage.getItem("name");
-  myHeading.textContent = `Hi ${storedName} let us create a ETH Wallet `;
+  let storedName = localStorage.getItem("name");
+  myHeading.innerHTML = `Hi ${storedName} let us create a ETH Wallet `;
 }
 myButton.onclick = () => {
   setUserName();
